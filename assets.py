@@ -1,9 +1,7 @@
 import requests
 
-params = {
-  'collection': 'mutant-ape-yacht-club'
-}
+url = "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20"
 
-r= requests.get ("https://api.opensea.io/api/v1/assets", params=params)
+response = requests.request("GET", url)
 
-print(r.json())
+print(response.text)
